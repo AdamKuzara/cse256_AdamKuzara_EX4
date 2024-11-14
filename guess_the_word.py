@@ -38,17 +38,19 @@ def guessing_game_start():
             if word.count(user_guess) > 0:
                 letter_count -= 1
             print(f"You're getting warmer. {letter_count} letters remaining.")
-            print("Current word: ", " ".join(concealed_word))
+            # concealed_word[0].upper is used to capitalize the first letter. I just did it because it looked nicer in the output.
+            print("Current word: ", " ".join([concealed_word[0].upper()] + concealed_word[1:]))
         else:
             chances -= 1
             print(f"Incorrect guess. Chances remaining: {chances}")
-            print("Current word: ", " ".join(concealed_word))
+            print("Current word: ", " ".join([concealed_word[0].upper()] + concealed_word[1:]))
         # This is the win condition.
         if "_" not in concealed_word:
-            print("Amazing job! You've guessed the word:", word)
+            # Similar to my reasoning with concealed_word[0], but since word outputs the full word instead a list .title() is used to capitalize the first letter.
+            print("Amazing job! You've guessed the word:", word.title())
             break
     # This is the lose condition.
     if chances == 0:
-        print("Sorry, you've run out of chances. The word was:", word)
+        print("Sorry, you've run out of chances. The word was:", word.title())
 
 guessing_game_start()
