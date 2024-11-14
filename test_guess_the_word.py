@@ -9,6 +9,7 @@ def chosenWord():
     assert chosen_word in words, f"You were supposed to get something from {words}, but got {chosen_word} instead."
 
 # I deleted a previous test because it ended up being too frustrating to work with, but this one thankfully actually helped. Sort of, but it was nice actually seeing pytest working.
+# This still consistently works as well. However if you make multiple errors it will only output one. I think it's the first error type you make.
 def test_invalid_input():
     # Test for invalid input: Non-alphabetical character
     with pytest.raises(ValueError, match="Invalid input. Please enter a single letter."):
