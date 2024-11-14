@@ -3,7 +3,7 @@ from guess_the_word import chosenWord, guessing_game_start
 # pytest -s test_guess_the_word.py - Saved this up here so I can just copy it into terminal each time.
 
 # First test was something really simple and honestly not even that helpful, but it was more for me testing if I was getting pytest to work. This just checks for a word that doesn't exist on the list.
-def chosenWord():
+def test_chosen_word():
     words = ["apple", "rock", "boulder", "wealthy", "poverty", "education", "castle", "family", "rhinoceros", "whale", "dollar", "quartz"]
     chosen_word = chosenWord()
     assert chosen_word in words, f"You were supposed to get something from {words}, but got {chosen_word} instead."
